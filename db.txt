@@ -1,0 +1,278 @@
+{
+    "Brands":[
+        {
+            "id":1,
+            "brand" : "KAWASAKI",
+            "bike" : [
+                {
+                    "id":1,
+                    "shortName":"H2R",
+                    "name":"KAWASAKI H2R",
+                    "brand" : "KAWASAKI",
+                    "infoPreview": "เป็นรถเครื่องขนาด 1000 cc",
+                    "imagesPreview" : "https://www.motorival.com/wp-content/uploads/2019/10/2019-kawasaki-h2r-09.jpg",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                {
+                    "id":2,
+                    "shortName":"H2SE",
+                    "name":"KAWASAKI H2SE",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"เป็นรถเครื่องขนาด 600 cc",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/ninjah2sxse/ninjah2sxse-green-02.jpg",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                {
+                    "id":3,
+                    "shortName":"H2",
+                    "name":"KAWASAKI H2",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"เป็นรถเครื่องขนาด 1000 cc",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/ninjah2/ninjah2-coated-black-02.jpg",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                {
+                    "id":4,
+                    "shortName":"ZX14R",
+                    "name":"KAWASAKI ZX14R",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"เป็นรถเครื่องขนาด 600 cc",
+                    "imagesPreview" : "https://cdn.shopify.com/s/files/1/0535/9753/6433/collections/Kawasaki_ZX14_Collection_1600x.jpg?v=1612112406",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                {
+                    "id":5,
+                    "shortName":"ZX10R",
+                    "name":"KAWASAKI ZX10R",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"เป็นรถเครื่องขนาด 1000 cc",
+                    "imagesPreview" : "https://www.bigbikeinfo.com/wp-content/uploads/Kawasaki-Ninja-ZX-10R-KRT-EDITION-2023.jpg",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                {
+                    "id":6,
+                    "shortName":"ZX6R",
+                    "name":"KAWASAKI ZX6R",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"เป็นรถเครื่องขนาด 600 cc",
+                    "imagesPreview" : "https://www.peeramotosports.co.th/wp-content/uploads/2020/08/nsmxpz3v.2rr-1066x800.jpg",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                {
+                    "id":7,
+                    "shortName":"ZX4R",
+                    "name":"KAWASAKI ZX4R",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"เป็นรถเครื่องขนาด 1000 cc",
+                    "imagesPreview" : "https://www.peeramotosports.co.th/wp-content/uploads/2023/02/626bc6ff-e1c0-4cdb-bbfe-766cb712e6dd-1199x799.jpg",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                {
+                    "id":8,
+                    "shortName":"ZX25R",
+                    "name":"KAWASAKI ZX25R",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"เป็นรถเครื่องขนาด 600 cc",
+                    "imagesPreview" : "https://motorrock.com.vn/upload/hinhanh/kawasaki-ninja-zx25r-abs-krt-edition-chinh-hang-motorrock312t.jpg",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                {
+                    "id":9,
+                    "shortName":"ZH2",
+                    "name":"KAWASAKI ZH2",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/2020-zh2/zh2-black-graphitegray-02.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":10,
+                    "shortName":"Z1000",
+                    "name":"KAWASAKI Z1000",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/z1000/z1000-black-gray-02.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":11,
+                    "shortName":"Z900SE",
+                    "name":"KAWASAKI Z900SE",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/2021-z900se/z900se-green-02.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":12,
+                    "shortName":"Z900",
+                    "name":"KAWASAKI Z900",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/z900/z900-perlwhite-02.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":13,
+                    "shortName":"Z800",
+                    "name":"KAWASAKI Z800",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://i1.wp.com/motomalaya.net/blog/wp-content/uploads/2012/10/2013-kawasaki-ninja-z800-09.jpg?fit=1199%2C900&ssl=1",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":14,
+                    "shortName":"Z650",
+                    "name":"KAWASAKI Z650",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/z650/kw-product-color-6-2.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":15,
+                    "shortName":"Z300",
+                    "name":"KAWASAKI Z300",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/z300/kw-z300_grn2.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":16,
+                    "shortName":"Z250",
+                    "name":"KAWASAKI Z250",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.peeramotosports.co.th/wp-content/uploads/2020/04/z250-metallic-gray-black-right-829x467.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":17,
+                    "shortName":"Z125",
+                    "name":"KAWASAKI Z125",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.peeramotosports.co.th/wp-content/uploads/2019/05/z125_prose_left-829x467.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":18,
+                    "shortName":"Ninja1000",
+                    "name":"KAWASAKI Ninja1000",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/ninja1000/ninja1000-green-grey-02.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":19,
+                    "shortName":"Ninja650",
+                    "name":"KAWASAKI Ninja650",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/ninja650new/ninja650-flatblack-02.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":20,
+                    "shortName":"Ninja400",
+                    "name":"KAWASAKI Ninja400",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/ninja400/ninja400se-green-2023-02.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":21,
+                    "shortName":"Ninja300",
+                    "name":"KAWASAKI Ninja300",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/ninja300krt/kw-product-color-2-2.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                },
+                {
+                    "id":22,
+                    "shortName":"Ninja250",
+                    "name":"KAWASAKI Ninja250",
+                    "brand" : "KAWASAKI",
+                    "infoPreview":"",
+                    "imagesPreview" : "https://www.kawasaki.co.th/uploads/products/ninja250/ninja250-Gray-Black-02.jpg",
+                    "main-images" : "",
+                    "intodruction": ""
+                }
+            ]
+        },
+        {
+            "id":2,
+            "brand" : "HONDA",
+            "bike" : [
+                {
+                    "id":1,
+                    "short_name":"CBR250RR",
+                    "name":"HONDA CBR250RR",
+                    "brand" : "HONDA",
+                    "infoPreview": "เป็นรถเครื่องขนาด 250 cc",
+                    "imagesPreview" : "https://www.bigbikeinfo.com/wp-content/uploads/Kawasaki-Ninja-ZX-10R-KRT-EDITION-2023.jpg",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "a"
+                },
+                {
+                    "id":2,
+                    "short_name":"CBR250RR",
+                    "name":"HONDA CBR250RR",
+                    "brand" : "HONDA",
+                    "infoPreview": "เป็นรถเครื่องขนาด 250 cc",
+                    "imagesPreview" : "https://www.bigbikeinfo.com/wp-content/uploads/Kawasaki-Ninja-ZX-10R-KRT-EDITION-2023.jpg",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "a"
+                },
+                {
+                    "id":3,
+                    "short_name":"CBR250RR",
+                    "name":"HONDA CBR250RR",
+                    "brand" : "HONDA",
+                    "infoPreview": "เป็นรถเครื่องขนาด 250 cc",
+                    "imagesPreview" : "https://www.bigbikeinfo.com/wp-content/uploads/Kawasaki-Ninja-ZX-10R-KRT-EDITION-2023.jpg",
+                    "main-images" : "https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "intodruction": "a"
+                }
+            ]
+        },
+        {
+            "id":3,
+            "brand" : "YAMAHA"
+        },
+        {
+            "id":4,
+            "brand" : "SUZUKI"
+        },
+        {
+            "id":5,
+            "brand" : "BMW"
+        }
+    ]
+}
