@@ -14,8 +14,8 @@ watch(() => props.bike, () => {
     inputAllBIke.value = props.bike;
     console.log(inputAllBIke.value);
 })
-// const inputAllBIke = ref([])
-// onMounted(async () => {
+
+
 //     try {
 //         const result = await fetch(`http://localhost:5000/Brands`)
 //         if (result.status === 200) {
@@ -45,12 +45,11 @@ watch(() => props.bike, () => {
                             class="h-48 width flex bg-black border rounded-3xl overflow-hidden shadow-md hover:shadow hover:cursor-pointer ">
                             <img class="w-3/6 mt-7 rounded-2xl border shadow-lg shadow-gray-600 h-32 object-cover ml-5"
                                 :src="bike.imagesPreview" alt="pic bike">
-                            <div class="absolute text-white ml-4 mt-5">
-                                <h1 class="text-xl font-semibold mt-5 ml-64">{{ bike.name }}</h1>
-                                <hr class="text-gray-500 ml-64">
-                                <p class="text-xs text-gray-200 mt-2 w-44 ml-64">{{ bike.infoPreview }} <span
-                                        class="text-red-600"> &nbsp Click to read
-                                        more</span>
+                            <div class="text-white ml-4 mt-5">
+                                <span class="click text-red-600 relative"> Click to read more</span>
+                                <h1 class="text-xl font-semibold -mt-4">{{ bike.name }}</h1>
+                                <hr class="text-gray-500 ">
+                                <p class="text-xs text-gray-200 mt-2 w-44 ">{{ bike.infoPreview }}
                                 </p>
                             </div>
                         </div>
@@ -78,7 +77,9 @@ watch(() => props.bike, () => {
     grid-gap: 1rem;
 }
 
-span {
-    font-size: 10px;
+.click {
+    left: 80px;
+    top: 140px;
+    font-size: 12px;
 }
 </style>

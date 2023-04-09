@@ -1,6 +1,9 @@
 <script setup>
+import { computed } from '@vue/reactivity';
 import { ref, onMounted, defineEmits, defineExpose } from 'vue'
 import { RouterLink } from "vue-router";
+import LaSearch from './icons/LaSearch.vue'
+import SimpleLineIconsClose from './icons/SimpleLineIconsClose.vue'
 
 const emit = defineEmits(["brandBike"]);
 const queryBike = ref([])
@@ -26,6 +29,7 @@ const dropdownOpen = () => {
     // console.log(navBarOpen.value);
 }
 
+
 // color text when click
 const changeColor = ref("")
 const changeTextColor = (color) => {
@@ -47,6 +51,25 @@ const filterBrand = (input) => {
     console.log(filterBike)
     return filterBike;
 };
+
+//search box
+const searchBox = ref(false)
+const searchLittle = ref("")
+const showSearchBox = () => {
+    searchBox.value = !searchBox.value
+    searchLittle.value = ""
+}
+
+const searchBoxFilter = computed(() => {
+    const itemName = queryBike.value
+    console.log(itemName.value);
+    return itemName.filter((i) => i.name.toLowerCase().includes(searchLittle.value.toLowerCase()))
+})
+
+const clearLitle = () => {
+    searchLittle.value = ""
+    searchBox.value = !searchBox.value
+}
 </script>
  
 <template >
@@ -258,15 +281,32 @@ const filterBrand = (input) => {
         </div>
 
         <!-- search box -->
-        <div class="searchBox w-1/6 pl-28 mt-9">
-            <input class="rounded-xl h-7 w-64" type="text" placeholder="Search something here ...">
+        <div class="searchBox w-1/6 pl-28 mt-9 relative cursor-pointer">
+            <input class="rounded-xl h-7 w-64 pl-5" type="text" placeholder="Search some bike ..."
+                v-model.trim="searchLittle" @click="showSearchBox">
+            <LaSearch class="relative -top-5 left-56 " v-show="!searchBox" @click="showSearchBox" />
+            <SimpleLineIconsClose class="relative -top-5 left-56" v-show="searchBox" @click="clearLitle" />
         </div>
+
 
         <!-- profile -->
         <div class="w-1/6 pl-36 mt-6">
             <img class="w-14 rounded-3xl border"
                 src="https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"
                 alt="profile">
+        </div>
+
+        <!-- search box -->
+        <div class="searchBoxShow w-full bg-white relative h-screen" v-show="searchBox">
+            <div v-show="index <= 6" v-for="(bike, index) in searchBoxFilter" :key="bike.id"
+                :class="index % 2 === 0 ? 'bg-gray-200' : 'bg-white'">
+                <RouterLink :to="{ name: BikeDetail, params: { id: bike.id } }" @click="clearLitle">
+                    <div class="h-24 flex items-center text-xl font-bold hover:text-red-600">
+                        <img class="w-24 object-cover ml-52 rounded-xl border" :src="bike.imagesPreview" alt="bike image">
+                        <h1 class="">{{ bike.name }}</h1>
+                    </div>
+                </RouterLink>
+            </div>
         </div>
     </div>
 </template>
@@ -283,32 +323,38 @@ div div div h1 {
     grid-gap: 1rem;
 }
 
+.searchBoxShow {
+    top: 95px;
+    margin-left: -1595px;
+    width: 2000px;
+}
+
 .listItemKawa {
-    margin-left: -256px;
+    margin-left: -270px;
     width: 2000px;
     background-color: rgb(255, 255, 255);
 }
 
 .listItemHonda {
-    margin-left: -445px;
+    margin-left: -470px;
     width: 2000px;
     background-color: rgb(255, 255, 255);
 }
 
 .listItemYamaha {
-    margin-left: -595px;
+    margin-left: -620px;
     width: 2000px;
     background-color: rgb(255, 255, 255);
 }
 
 .listItemSuzuki {
-    margin-left: -765px;
+    margin-left: -790px;
     width: 2000px;
     background-color: rgb(255, 255, 255);
 }
 
 .listItemBmw {
-    margin-left: -945px;
+    margin-left: -970px;
     width: 2000px;
     background-color: rgb(255, 255, 255);
 }
