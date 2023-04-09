@@ -1,29 +1,13 @@
-# vue-project
+# Project Information Bike
 
-This template should help get you started developing with Vue 3 in Vite.
+It's my first project
 
-## Recommended IDE Setup
+| Name                  | Percentage |
+| --------------------- | :--------: |
+| นายพิชญะ จันทรศรีวงศ์ |    100%    |
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Features
 
-## Customize configuration
+## Design
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+https://www.figma.com/proto/ZBO7uctYR8zTdiNLe36zLs/AppSaleBike?node-id=1-6
