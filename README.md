@@ -8,8 +8,8 @@ It's my first project
 
 ## Features
 
--navBar ไปดูข้อมูลต่างๆ
--searchBox ค้นหาชื่อมอเตอร์ไซต์
+- navBar ไปดูข้อมูลต่างๆ
+- searchBox ค้นหาชื่อมอเตอร์ไซต์
 
 ## Design
 
