@@ -2,7 +2,7 @@
     "Brands": [
         {
             "brandId": 1,
-            "brand_bike": "kawasaki",
+            "brandBike": "kawasaki",
             "bike": [
                 {
                     "id": 1,
@@ -250,7 +250,7 @@
         },
         {
             "brandId": 2,
-            "brand_bike": "honda",
+            "brandBike": "honda",
             "bike": [
                 {
                     "id": 1,
@@ -289,7 +289,7 @@
         },
         {
             "brandId": 3,
-            "brand_bike": "yamaha",
+            "brandBike": "yamaha",
             "bike": [
                 {
                     "id": 1,
@@ -306,7 +306,7 @@
         },
         {
             "brandId": 4,
-            "brand_bike": "suzuki",
+            "brandBike": "suzuki",
             "bike": [
                 {
                     "id": 1,
@@ -323,7 +323,7 @@
         },
         {
             "brandId": 5,
-            "brand_bike": "bmw",
+            "brandBike": "bmw",
             "bike": [
                 {
                     "id": 1,

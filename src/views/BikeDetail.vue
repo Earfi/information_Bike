@@ -1,16 +1,14 @@
 <script setup>
 import { ref, watch } from "vue";
-
-const bikeInfo = ref({});
 const props = defineProps({
     bikeInput: {
         required: true
     }
 })
 
-const inputProps = ref({})
+const bikeInfo = ref({})
 watch(() => props.bikeInput, () => {
-    inputProps.value = props.bikeInput;
+    bikeInfo.value = props.bikeInput;
 })
 
 </script>
@@ -18,12 +16,12 @@ watch(() => props.bikeInput, () => {
 <template>
     <div class="w-full">
         <!-- <img :src="bikeInfo?.images" alt=""> -->
-        <h1 class="w-full text-5xl font-semibold flex justify-center mb-5">{{ inputProps.name }}</h1>
+        <h1 class="w-full text-5xl font-semibold flex justify-center mb-5">{{ bikeInfo.name }}</h1>
         <hr />
         <div class="flex">
             <img class="w-2/6 mt-7 ml-32 rounded-2xl border shadow-lg shadow-gray-600 object-cover"
-                :src="inputProps.imagesPreview" alt="">
-            <h1 class="width-intodruction ml-20 mt-24"><b>{{ inputProps.name }}</b> {{ inputProps.intodruction }}
+                :src="bikeInfo.imagesPreview" alt="">
+            <h1 class="width-intodruction ml-20 mt-24"><b>{{ bikeInfo.name }}</b> {{ bikeInfo.intodruction }}
             </h1>
         </div>
     </div>

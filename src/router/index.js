@@ -15,7 +15,7 @@ const router = createRouter({
       component: () => import('../views/ListBikeView.vue')
     },
     {
-      path: '/bikedetail/:brand_bike/:pathName',
+      path: '/bikedetail/:brandBike/:pathName',
       name: 'BikeDetail',
       component: () => import('../views/BikeDetail.vue')
     }

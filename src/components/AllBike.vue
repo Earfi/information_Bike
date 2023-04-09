@@ -3,15 +3,15 @@ import { ref, watch, onMounted } from 'vue';
 import { RouterLink } from "vue-router";
 
 const props = defineProps({
-    bike: {
+    listBikeAll: {
         type: Array,
         default: []
     }
 })
 
 const inputAllBIke = ref([])
-watch(() => props.bike, () => {
-    inputAllBIke.value = props.bike;
+watch(() => props.listBikeAll, () => {
+    inputAllBIke.value = props.listBikeAll;
     console.log(inputAllBIke.value);
 })
 

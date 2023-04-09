@@ -22,7 +22,7 @@ const getBike = (i) => {
       <Navbar @sendAllBrandBike="getAllBike" @sendBike="getBike" />
       <!-- <Navbar /> -->
     </div>
-    <RouterView :bike="sendAllBike" :bikeInput="sendBike" />
+    <RouterView :listBike="sendAllBike" :bikeInput="sendBike" />
   </div>
 </template>
  
