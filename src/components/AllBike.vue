@@ -38,7 +38,7 @@ watch(() => props.bike, () => {
     <div class="w-full ">
         <h1 class="text-4xl font-bold pl-36 mt-5 mb-7 w-full">Bike</h1>
         <div class="grid-container">
-            <span v-for="bike of inputAllBIke" :key="bike.id">
+            <span v-for="bike of inputAllBIke" :key="bike.brandId">
                 <div class="ml-1">
                     <RouterLink class="" :to="{ name: 'BikeDetail', params: { id: bike.id } }">
                         <div

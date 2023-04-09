@@ -1,21 +1,28 @@
 <script setup>
 import Navbar from './components/Navbar.vue'
-import { ref, onMounted, defineEmits, defineExpose } from 'vue'
+import { ref } from 'vue'
 import { RouterView } from "vue-router";
 
-const category = ref([]);
-const getProduct = (itemProduct) => {
-  category.value = itemProduct;
+const sendAllBike = ref([]);
+const getAllBike = (i) => {
+  sendAllBike.value = i;
+  console.log(sendAllBike.value);
+};
+
+const sendBike = ref();
+const getBike = (i) => {
+  sendBike.value = i;
+  // console.log(sendBike.value);
 };
 </script>
  
 <template>
   <div class="">
     <div class="mb-28 ">
-      <Navbar @brandBike="getProduct" />
+      <Navbar @sendAllBrandBike="getAllBike" @sendBike="getBike" />
       <!-- <Navbar /> -->
     </div>
-    <RouterView :bike="category" />
+    <RouterView :bike="sendAllBike" :bikeInput="sendBike" />
   </div>
 </template>
  

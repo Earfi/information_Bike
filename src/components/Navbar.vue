@@ -1,20 +1,22 @@
 <script setup>
 import { computed } from '@vue/reactivity';
-import { ref, onMounted, defineEmits, defineExpose } from 'vue'
+import { ref, onMounted, defineEmits, defineExpose, toRef } from 'vue'
 import { RouterLink } from "vue-router";
 import LaSearch from './icons/LaSearch.vue'
 import SimpleLineIconsClose from './icons/SimpleLineIconsClose.vue'
 
-const emit = defineEmits(["brandBike"]);
+const emit = defineEmits(["sendAllBrandBike", "sendBike"]);
 const queryBike = ref([])
+const queryAllBikeBrands = ref([])
 onMounted(async () => {
     try {
         const result = await fetch(`http://localhost:5000/Brands`)
         if (result.status === 200) {
             const response = await result.json()
             queryBike.value = response
+            queryAllBikeBrands.value = queryBike.value.bike
             // console.log(response);
-            // console.log(queryBike.value);
+            console.log(queryBike.value);
         }
     }
     catch (err) {
@@ -33,12 +35,13 @@ const dropdownOpen = () => {
 // color text when click
 const changeColor = ref("")
 const changeTextColor = (color) => {
+    // if (changeColor.value !== color) {
+    //     changeColor.value = ""
+    // }
     if (changeColor.value === color) {
         changeColor.value = ""
     }
-    // else if (changeColor.value !== color) {
-    //     changeColor.value === ""
-    // } 
+    // 
     else {
         changeColor.value = color
     }
@@ -47,8 +50,8 @@ const changeTextColor = (color) => {
 }
 
 const filterBrand = (input) => {
-    const filterBike = queryBike.value.filter((x) => x.brand === input);
-    console.log(filterBike)
+    const filterBike = queryAllBikeBrands.value.filter((x) => x.brand === input);
+    console.log(filterBike.value)
     return filterBike;
 };
 
@@ -62,10 +65,18 @@ const showSearchBox = () => {
 
 const searchBoxFilter = computed(() => {
     const itemName = queryBike.value
-    console.log(itemName.value);
-    return itemName.filter((i) => i.name.toLowerCase().includes(searchLittle.value.toLowerCase()))
-})
+    console.log(itemName);
 
+    const result = [];
+
+    // itemName.bike.forEach(bike => {
+    //     if (bike.name.toLowerCase().includes(searchLittle.value.toLowerCase())) {
+    //         result.push(bike.name);
+    //     }
+    // });
+
+    return result;
+});
 const clearLitle = () => {
     searchLittle.value = ""
     searchBox.value = !searchBox.value
@@ -98,35 +109,50 @@ const clearLitle = () => {
                                 <h1 class="mb-2 font-bold text-4xl">News</h1>
                                 <hr />
                             </div>
-                            <div class="bikeWidth -ml-80 ">
+                            <div class="bikeWidth -ml-40 ">
                                 <h1 class=" mb-2 font-bold text-4xl ml-20">Bike</h1>
                                 <hr class="mb-5" />
                                 <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{ name: 'ListBike' }"
-                                    @click="$emit('brandBike', filterBrand(`KAWASAKI`))">
+                                    @click="$emit('sendAllBrandBike', filterBrand(`kawasaki`))">
                                     All Bike
                                 </RouterLink>
-                                <div class="flex flex-wrap pl-16">
-                                    <div v-for="brands of queryBike" :key="brands.id">
-                                        <div class="font-semibold w-60 pt-6" v-show="brands.brand === 'KAWASAKI'">
-                                            <RouterLink :to="{
-                                                name: 'BikeDetail', params: { id: brands.id }
-                                            }">
-                                                <p class="hover:text-red-600 cursor-pointer ">{{ brands.shortName }}</p>
+                                <div class="pl-16">
+                                    <div v-for="brand of queryBike" :key="brand.brandId" class="grid grid-cols-3">
+                                        <div v-for="bike of brand.bike" :key="bike.id" v-show="bike.brand === 'kawasaki'">
+                                            <RouterLink
+                                                :to="{ name: 'BikeDetail', params: { brand_bike: brand.brand_bike, pathName: bike.pathName } }"
+                                                @click="$emit('sendBike', bike)">
+                                                <p class="hover:text-red-600 cursor-pointer mt-5 font-semibold">{{
+                                                    bike.shortName }}</p>
+                                                <!-- <img :src="b.imagesPreview" alt=""> -->
                                             </RouterLink>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="new -ml-36">
+                            <div class="new ml-32 w-96">
                                 <h1 class=" mb-2 font-bold text-4xl">Preview</h1>
                                 <hr />
+                                <div class="grid justify-center " v-for="brand of queryBike" :key="brand.brandId">
+                                    <div v-for="bike of brand.bike" :key="bike.id" class="mt-5"
+                                        v-show="bike.brand === 'kawasaki'">
+                                        <RouterLink
+                                            :to="{ name: 'BikeDetail', params: { brand_bike: brand.brand_bike, pathName: bike.pathName } }"
+                                            @click="$emit('sendBike', bike)">
+                                            <div v-show="bike.id < 4">
+                                                <img class="w-64 rounded-2xl object-cover border cursor-pointer hover:border-red-600"
+                                                    :src="bike.imagesPreview" alt="image preview bike">
+                                            </div>
+                                        </RouterLink>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- HONDA -->
-                <div class="honda absolute " @click="changeTextColor('honda') && dropdownOpen()">
+                <div class="honda absolute" @click="changeTextColor('honda') && dropdownOpen()">
                     <h1 :style="changeColor === 'honda' ? { color: 'red' } : { color: 'white' }"
                         class="hover:cursor-pointer hover:text-red-700 fixed">
                         HONDA</h1>
@@ -137,34 +163,50 @@ const clearLitle = () => {
                                 <h1 class="mb-2 font-bold text-4xl">News</h1>
                                 <hr />
                             </div>
-                            <div class="bikeWidth -ml-80">
+                            <div class="bikeWidth -ml-40 ">
                                 <h1 class=" mb-2 font-bold text-4xl ml-20">Bike</h1>
                                 <hr class="mb-5" />
                                 <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{ name: 'ListBike' }"
-                                    @click="$emit('brandBike', filterBrand(`HONDA`))">
+                                    @click="$emit('sendAllBrandBike', filterBrand(`honda`))">
                                     All Bike
                                 </RouterLink>
-                                <div class="flex flex-wrap pl-16">
-                                    <div v-for="brands of queryBike" :key="brands.id">
-                                        <div class="font-semibold w-60 pt-6" v-show="brands.brand === 'HONDA'">
-                                            <RouterLink :to="{
-                                                name: 'BikeDetail', params: { id: brands.id }
-                                            }">
-                                                <p class="hover:text-red-600 cursor-pointer ">{{ brands.shortName }}</p>
+                                <div class="pl-16">
+                                    <div v-for="brand of queryBike" :key="brand.brandId" class="grid grid-cols-3">
+                                        <div v-for="bike of brand.bike" :key="bike.id" v-show="bike.brand === 'honda'">
+                                            <RouterLink
+                                                :to="{ name: 'BikeDetail', params: { brand_bike: brand.brand_bike, pathName: bike.pathName } }"
+                                                @click="$emit('sendBike', bike)">
+                                                <p class="hover:text-red-600 cursor-pointer mt-5 font-semibold">{{
+                                                    bike.shortName }}</p>
+                                                <!-- <img :src="b.imagesPreview" alt=""> -->
                                             </RouterLink>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="new -ml-36">
+                            <div class="new ml-32 w-96">
                                 <h1 class=" mb-2 font-bold text-4xl">Preview</h1>
                                 <hr />
+                                <div class="grid justify-center " v-for="brand of queryBike" :key="brand.brandId">
+                                    <div v-for="bike of brand.bike" :key="bike.id" class="mt-5"
+                                        v-show="bike.brand === 'honda'">
+                                        <RouterLink
+                                            :to="{ name: 'BikeDetail', params: { brand_bike: brand.brand_bike, pathName: bike.pathName } }"
+                                            @click="$emit('sendBike', bike)">
+                                            <div v-show="bike.id < 4">
+                                                <img class="w-64 rounded-2xl object-cover border cursor-pointer hover:border-red-600"
+                                                    :src="bike.imagesPreview" alt="image preview bike">
+                                            </div>
+                                        </RouterLink>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- YAMAHA -->
-                <div class="yamaha absolut" @click="changeTextColor('yamaha') && dropdownOpen()">
+                <div class="yamaha absolute" @click="changeTextColor('yamaha') && dropdownOpen()">
                     <h1 :style="changeColor === 'yamaha' ? { color: 'red' } : { color: 'white' }"
                         class="hover:cursor-pointer hover:text-red-700 fixed">
                         YAMAHA</h1>
@@ -175,32 +217,48 @@ const clearLitle = () => {
                                 <h1 class="mb-2 font-bold text-4xl">News</h1>
                                 <hr />
                             </div>
-                            <div class="bikeWidth -ml-80">
+                            <div class="bikeWidth -ml-40 ">
                                 <h1 class=" mb-2 font-bold text-4xl ml-20">Bike</h1>
                                 <hr class="mb-5" />
                                 <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{ name: 'ListBike' }"
-                                    @click="$emit('brandBike', filterBrand(`YAMAHA`))">
+                                    @click="$emit('sendAllBrandBike', filterBrand(`yamaha`))">
                                     All Bike
                                 </RouterLink>
-                                <div class="flex flex-wrap pl-16">
-                                    <div v-for="brands of queryBike" :key="brands.id">
-                                        <div class="font-semibold w-60 pt-6" v-show="brands.brand === 'YAMAHA'">
-                                            <RouterLink :to="{
-                                                name: 'BikeDetail', params: { id: brands.id }
-                                            }">
-                                                <p class="hover:text-red-600 cursor-pointer ">{{ brands.shortName }}</p>
+                                <div class="pl-16">
+                                    <div v-for="brand of queryBike" :key="brand.brandId" class="grid grid-cols-3">
+                                        <div v-for="bike of brand.bike" :key="bike.id" v-show="bike.brand === 'yamaha'">
+                                            <RouterLink
+                                                :to="{ name: 'BikeDetail', params: { brand_bike: brand.brand_bike, pathName: bike.pathName } }"
+                                                @click="$emit('sendBike', bike)">
+                                                <p class="hover:text-red-600 cursor-pointer mt-5 font-semibold">{{
+                                                    bike.shortName }}</p>
+                                                <!-- <img :src="b.imagesPreview" alt=""> -->
                                             </RouterLink>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="new -ml-36">
+                            <div class="new ml-32 w-96">
                                 <h1 class=" mb-2 font-bold text-4xl">Preview</h1>
                                 <hr />
+                                <div class="grid justify-center " v-for="brand of queryBike" :key="brand.brandId">
+                                    <div v-for="bike of brand.bike" :key="bike.id" class="mt-5"
+                                        v-show="bike.brand === 'yamaha'">
+                                        <RouterLink
+                                            :to="{ name: 'BikeDetail', params: { brand_bike: brand.brand_bike, pathName: bike.pathName } }"
+                                            @click="$emit('sendBike', bike)">
+                                            <div v-show="bike.id < 4">
+                                                <img class="w-64 rounded-2xl object-cover border cursor-pointer hover:border-red-600"
+                                                    :src="bike.imagesPreview" alt="image preview bike">
+                                            </div>
+                                        </RouterLink>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- SUZUKI -->
                 <div class="suzuki absolute" @click="changeTextColor('suzuki') && dropdownOpen()">
                     <h1 :style="changeColor === 'suzuki' ? { color: 'red' } : { color: 'white' }"
@@ -213,32 +271,48 @@ const clearLitle = () => {
                                 <h1 class="mb-2 font-bold text-4xl">News</h1>
                                 <hr />
                             </div>
-                            <div class="bikeWidth -ml-80">
+                            <div class="bikeWidth -ml-40 ">
                                 <h1 class=" mb-2 font-bold text-4xl ml-20">Bike</h1>
                                 <hr class="mb-5" />
                                 <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{ name: 'ListBike' }"
-                                    @click="$emit('brandBike', filterBrand(`SUZUKI`))">
+                                    @click="$emit('sendAllBrandBike', filterBrand(`suzuki`))">
                                     All Bike
                                 </RouterLink>
-                                <div class="flex flex-wrap pl-16">
-                                    <div v-for="brands of queryBike" :key="brands.id">
-                                        <div class="font-semibold w-60 pt-6" v-show="brands.brand === 'SUZUKI'">
-                                            <RouterLink :to="{
-                                                name: 'BikeDetail', params: { id: brands.id }
-                                            }">
-                                                <p class="hover:text-red-600 cursor-pointer ">{{ brands.shortName }}</p>
+                                <div class="pl-16">
+                                    <div v-for="brand of queryBike" :key="brand.brandId" class="grid grid-cols-3">
+                                        <div v-for="bike of brand.bike" :key="bike.id" v-show="bike.brand === 'suzuki'">
+                                            <RouterLink
+                                                :to="{ name: 'BikeDetail', params: { brand_bike: brand.brand_bike, pathName: bike.pathName } }"
+                                                @click="$emit('sendBike', bike)">
+                                                <p class="hover:text-red-600 cursor-pointer mt-5 font-semibold">{{
+                                                    bike.shortName }}</p>
+                                                <!-- <img :src="b.imagesPreview" alt=""> -->
                                             </RouterLink>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="new -ml-36">
+                            <div class="new ml-32 w-96">
                                 <h1 class=" mb-2 font-bold text-4xl">Preview</h1>
                                 <hr />
+                                <div class="grid justify-center " v-for="brand of queryBike" :key="brand.brandId">
+                                    <div v-for="bike of brand.bike" :key="bike.id" class="mt-5"
+                                        v-show="bike.brand === 'suzuki'">
+                                        <RouterLink
+                                            :to="{ name: 'BikeDetail', params: { brand_bike: brand.brand_bike, pathName: bike.pathName } }"
+                                            @click="$emit('sendBike', bike)">
+                                            <div v-show="bike.id < 4">
+                                                <img class="w-64 rounded-2xl object-cover border cursor-pointer hover:border-red-600"
+                                                    :src="bike.imagesPreview" alt="image preview bike">
+                                            </div>
+                                        </RouterLink>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- BMW -->
                 <div class="bmw absolute" @click="changeTextColor('bmw') && dropdownOpen()">
                     <h1 :style="changeColor === 'bmw' ? { color: 'red' } : { color: 'white' }"
@@ -251,34 +325,51 @@ const clearLitle = () => {
                                 <h1 class="mb-2 font-bold text-4xl">News</h1>
                                 <hr />
                             </div>
-                            <div class="bikeWidth -ml-80">
+                            <div class="bikeWidth -ml-40 ">
                                 <h1 class=" mb-2 font-bold text-4xl ml-20">Bike</h1>
                                 <hr class="mb-5" />
                                 <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{ name: 'ListBike' }"
-                                    @click="$emit('brandBike', filterBrand(`BMW`))">
+                                    @click="$emit('sendAllBrandBike', filterBrand(`bmw`))">
                                     All Bike
                                 </RouterLink>
-                                <div class="flex flex-wrap pl-16">
-                                    <div v-for="brands of queryBike" :key="brands.id">
-                                        <div class="font-semibold w-60 pt-6" v-show="brands.brand === 'BMW'">
-                                            <RouterLink :to="{
-                                                name: 'BikeDetail', params: { id: brands.id }
-                                            }">
-                                                <p class="hover:text-red-600 cursor-pointer ">{{ brands.shortName }}</p>
+                                <div class="pl-16">
+                                    <div v-for="brand of queryBike" :key="brand.brandId" class="grid grid-cols-3">
+                                        <div v-for="bike of brand.bike" :key="bike.id" v-show="bike.brand === 'bmw'">
+                                            <RouterLink
+                                                :to="{ name: 'BikeDetail', params: { brand_bike: brand.brand_bike, pathName: bike.pathName } }"
+                                                @click="$emit('sendBike', bike)">
+                                                <p class="hover:text-red-600 cursor-pointer mt-5 font-semibold">{{
+                                                    bike.shortName }}</p>
+                                                <!-- <img :src="b.imagesPreview" alt=""> -->
                                             </RouterLink>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="new -ml-36">
+                            <div class="new ml-32 w-96">
                                 <h1 class=" mb-2 font-bold text-4xl">Preview</h1>
                                 <hr />
+                                <div class="grid justify-center " v-for="brand of queryBike" :key="brand.brandId">
+                                    <div v-for="bike of brand.bike" :key="bike.id" class="mt-5"
+                                        v-show="bike.brand === 'bmw'">
+                                        <RouterLink
+                                            :to="{ name: 'BikeDetail', params: { brand_bike: brand.brand_bike, pathName: bike.pathName } }"
+                                            @click="$emit('sendBike', bike)">
+                                            <div v-show="bike.id < 4">
+                                                <img class="w-64 rounded-2xl object-cover border cursor-pointer hover:border-red-600"
+                                                    :src="bike.imagesPreview" alt="image preview bike">
+                                            </div>
+                                        </RouterLink>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
+
 
         <!-- search box -->
         <div class="searchBox w-1/6 pl-28 mt-9 relative cursor-pointer">
@@ -298,7 +389,8 @@ const clearLitle = () => {
 
         <!-- search box -->
         <div class="searchBoxShow w-full bg-white relative h-screen" v-show="searchBox">
-            <div v-show="index <= 6" v-for="(bike, index) in searchBoxFilter" :key="bike.id"
+            <h1>{{ searchLittle }}</h1>
+            <div v-show="index <= 6" v-for="(bike, index) in searchBoxFilter" :key="bike.id" -->
                 :class="index % 2 === 0 ? 'bg-gray-200' : 'bg-white'">
                 <RouterLink :to="{ name: BikeDetail, params: { id: bike.id } }" @click="clearLitle">
                     <div class="h-24 flex items-center text-xl font-bold hover:text-red-600">
@@ -326,36 +418,36 @@ div div div h1 {
 .searchBoxShow {
     top: 95px;
     margin-left: -1595px;
-    width: 2000px;
+    width: 1650px;
 }
 
 .listItemKawa {
     margin-left: -270px;
-    width: 2000px;
+    width: 1650px;
     background-color: rgb(255, 255, 255);
 }
 
 .listItemHonda {
     margin-left: -470px;
-    width: 2000px;
+    width: 1650px;
     background-color: rgb(255, 255, 255);
 }
 
 .listItemYamaha {
     margin-left: -620px;
-    width: 2000px;
+    width: 1650px;
     background-color: rgb(255, 255, 255);
 }
 
 .listItemSuzuki {
     margin-left: -790px;
-    width: 2000px;
+    width: 1650px;
     background-color: rgb(255, 255, 255);
 }
 
 .listItemBmw {
     margin-left: -970px;
-    width: 2000px;
+    width: 1650px;
     background-color: rgb(255, 255, 255);
 }
 
