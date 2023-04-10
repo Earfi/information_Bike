@@ -1,7 +1,8 @@
 <script setup>
 import Navbar from './components/Navbar.vue'
-import { ref } from 'vue'
-import { RouterView } from "vue-router";
+import { ref, onMounted, defineEmits, defineExpose } from 'vue'
+import { RouterView, RouterLink } from "vue-router";
+import AllBike from './components/AllBike.vue'
 
 const sendAllBike = ref([]);
 const getAllBike = (i) => {
@@ -14,13 +15,13 @@ const getBike = (i) => {
   sendBike.value = i;
   // console.log(sendBike.value);
 };
+
 </script>
  
 <template>
   <div class="">
     <div class="mb-28 ">
       <Navbar @sendAllBrandBike="getAllBike" @sendBike="getBike" />
-      <!-- <Navbar /> -->
     </div>
     <RouterView :listBike="sendAllBike" :bikeInput="sendBike" />
   </div>

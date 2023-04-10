@@ -16,7 +16,7 @@ onMounted(async () => {
             queryBike.value = response
             queryAllBikeBrands.value = queryBike.value.bike
             // console.log(response);
-            console.log(queryBike.value);
+            // console.log(queryBike.value);
         }
     }
     catch (err) {
@@ -94,22 +94,25 @@ const clearLitle = () => {
                     <h1 :style="changeColor === 'kawasaki' ? { color: 'red' } : { color: 'white' }"
                         class="hover:cursor-pointer hover:text-red-700 fixed">
                         KAWASAKI</h1>
-                    <div class="listItemKawa mt-16 h-full border border-black text-black p-5 ease-in duration-300"
+                    <div class="listItemKawasaki mt-16 h-full border border-black text-black p-5 ease-in duration-300"
                         v-show="navBarOpen === true && changeColor === 'kawasaki'">
                         <div class="grid grid-cols-3  z-10 ">
                             <div class="w-96">
                                 <h1 class="mb-2 font-bold text-4xl">News</h1>
                                 <hr />
                             </div>
-                            <div class="bikeWidth -ml-40 ">
+                            <div class="bikeWidth -ml-44 ">
                                 <h1 class=" mb-2 font-bold text-4xl ml-20">Bike</h1>
                                 <hr class="mb-5" />
-                                <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{ name: 'ListBike' }"
-                                    @click="$emit('sendAllBrandBike', filterBrand(`kawasaki`))">
+                                <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{
+                                    name: 'ListBikeView', params: {
+                                        brandBike: 'kawasaki'
+                                    }
+                                }" @click="$emit('sendAllBrandBike', `kawasaki`)">
                                     All Bike
                                 </RouterLink>
                                 <div class="pl-16">
-                                    <div v-for="brand of queryBike" :key="brand.brandId" class="grid grid-cols-3">
+                                    <div v-for="brand of     queryBike" :key="brand.brandId" class="grid grid-cols-3">
                                         <div v-for="bike of brand.bike" :key="bike.id" v-show="bike.brand === 'kawasaki'">
                                             <RouterLink
                                                 :to="{ name: 'BikeDetail', params: { brandBike: brand.brandBike, pathName: bike.pathName } }"
@@ -155,11 +158,14 @@ const clearLitle = () => {
                                 <h1 class="mb-2 font-bold text-4xl">News</h1>
                                 <hr />
                             </div>
-                            <div class="bikeWidth -ml-40 ">
+                            <div class="bikeWidth -ml-44 ">
                                 <h1 class=" mb-2 font-bold text-4xl ml-20">Bike</h1>
                                 <hr class="mb-5" />
-                                <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{ name: 'ListBike' }"
-                                    @click="$emit('sendAllBrandBike', filterBrand(`honda`))">
+                                <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{
+                                    name: 'ListBikeView', params: {
+                                        brandBike: 'honda'
+                                    }
+                                }" @click="$emit('sendAllBrandBike', `honda`)">
                                     All Bike
                                 </RouterLink>
                                 <div class="pl-16">
@@ -209,11 +215,14 @@ const clearLitle = () => {
                                 <h1 class="mb-2 font-bold text-4xl">News</h1>
                                 <hr />
                             </div>
-                            <div class="bikeWidth -ml-40 ">
+                            <div class="bikeWidth -ml-44 ">
                                 <h1 class=" mb-2 font-bold text-4xl ml-20">Bike</h1>
                                 <hr class="mb-5" />
-                                <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{ name: 'ListBike' }"
-                                    @click="$emit('sendAllBrandBike', filterBrand(`yamaha`))">
+                                <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{
+                                    name: 'ListBikeView', params: {
+                                        brandBike: 'yamaha'
+                                    }
+                                }" @click="$emit('sendAllBrandBike', `yamaha`)">
                                     All Bike
                                 </RouterLink>
                                 <div class="pl-16">
@@ -263,11 +272,14 @@ const clearLitle = () => {
                                 <h1 class="mb-2 font-bold text-4xl">News</h1>
                                 <hr />
                             </div>
-                            <div class="bikeWidth -ml-40 ">
+                            <div class="bikeWidth -ml-44 ">
                                 <h1 class=" mb-2 font-bold text-4xl ml-20">Bike</h1>
                                 <hr class="mb-5" />
-                                <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{ name: 'ListBike' }"
-                                    @click="$emit('sendAllBrandBike', filterBrand(`suzuki`))">
+                                <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{
+                                    name: 'ListBikeView', params: {
+                                        brandBike: 'suzuki'
+                                    }
+                                }" @click="$emit('sendAllBrandBike', `suzuki`)">
                                     All Bike
                                 </RouterLink>
                                 <div class="pl-16">
@@ -317,11 +329,14 @@ const clearLitle = () => {
                                 <h1 class="mb-2 font-bold text-4xl">News</h1>
                                 <hr />
                             </div>
-                            <div class="bikeWidth -ml-40 ">
+                            <div class="bikeWidth -ml-44 ">
                                 <h1 class=" mb-2 font-bold text-4xl ml-20">Bike</h1>
                                 <hr class="mb-5" />
-                                <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{ name: 'ListBike' }"
-                                    @click="$emit('sendAllBrandBike', filterBrand(`bmw`))">
+                                <RouterLink class="hover:text-red-600 pl-16 font-semibold" :to="{
+                                    name: 'ListBikeView', params: {
+                                        brandBike: 'bmw'
+                                    }
+                                }" @click="$emit('sendAllBrandBike', `bmw`)">
                                     All Bike
                                 </RouterLink>
                                 <div class="pl-16">
@@ -413,7 +428,7 @@ div div div h1 {
     width: 1650px;
 }
 
-.listItemKawa {
+.listItemKawasaki {
     margin-left: -270px;
     width: 1650px;
     background-color: rgb(255, 255, 255);

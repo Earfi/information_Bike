@@ -4,22 +4,26 @@ import { useRoute, useRouter } from "vue-router";
 import AllBike from '../components/AllBike.vue'
 
 const props = defineProps({
-  listBike: {
+  bike: {
     type: Array,
     requied: true
   },
 });
 
 
+
+// console.log(props.bike);
 const itemAllInput = ref([])
+// inputProps.value = props.bike
+// console.log(inputProps.value);
 
 onMounted(() => {
-  itemAllInput.value = props.listBike;
-  console.log(itemAllInput);
+  itemAllInput.value = props.bike;
+  console.log(itemAllInput.value);
 })
 watch(() => props.bike, () => {
-  itemAllInput.value = props.listBike;
-  console.log(itemAllInput);
+  itemAllInput.value = props.bike.value;
+  console.log(itemAllInput.value);
 })
 
 </script>
@@ -27,7 +31,7 @@ watch(() => props.bike, () => {
 <template>
   <div>
     <hr class="mt-5" />
-    <AllBike :listBikeAll="itemAllInput" />
+    <AllBike :bike="itemAllInput" />
   </div>
 </template>
 

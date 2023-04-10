@@ -16,12 +16,12 @@ watch(() => props.bikeInput, () => {
 <template>
     <div class="w-full">
         <!-- <img :src="bikeInfo?.images" alt=""> -->
-        <h1 class="w-full text-5xl font-semibold flex justify-center mb-5">{{ bikeInfo.model }}</h1>
+        <h1 class="w-full text-5xl font-semibold flex justify-center mb-5">{{ bikeInfo.name }}</h1>
         <hr />
         <div class="flex">
             <img class="w-2/6 mt-7 ml-32 rounded-2xl border shadow-lg shadow-gray-600 object-cover"
                 :src="bikeInfo.imagesPreview" alt="">
-            <h1 class="width-intodruction ml-20 mt-24"><b>{{ bikeInfo.model }}</b> {{ bikeInfo.intodruction }}
+            <h1 class="width-intodruction ml-20 mt-24"><b>{{ bikeInfo.name }}</b> {{ bikeInfo.intodruction }}
             </h1>
         </div>
     </div>

@@ -10,14 +10,19 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/listbike',
-      name: 'ListBike',
+      path: '/listbike/:brandBike',
+      name: 'ListBikeView',
       component: () => import('../views/ListBikeView.vue')
     },
     {
       path: '/bikedetail/:brandBike/:pathName',
       name: 'BikeDetail',
       component: () => import('../views/BikeDetail.vue')
+    },
+    {
+      path: '/allbike',
+      name: 'Allbike',
+      component: () => import('../components/AllBike.vue')
     }
   ]
 })
