@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.vue'
 import { ref, onMounted, defineEmits, defineExpose } from 'vue'
 import { RouterView, RouterLink } from "vue-router";
 import AllBike from './components/AllBike.vue'
+import FooterContent from './components/FooterContent.vue';
 
 const sendAllBike = ref([]);
 const getAllBike = (i) => {
@@ -24,6 +25,7 @@ const getBike = (i) => {
       <Navbar @sendAllBrandBike="getAllBike" @sendBike="getBike" />
     </div>
     <RouterView :listBike="sendAllBike" :bikeInput="sendBike" />
+    <FooterContent />
   </div>
 </template>
  

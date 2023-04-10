@@ -1,14 +1,93 @@
+{
+    "id": 1,
+    "path_Name": "",
+    "short_Name": "",
+    "model": "",
+    "brand": "",
+    "info_Preview": "",
+    "images_Preview": "",
+    "main_Images": "",
+    "intodruction": "",
+    "power": {
+        "engine": "",
+        "engine_size": "",
+        "bore_X_Stroke": "",
+        "compression_Ratio": "",
+        "fuel_Supply_System": "",
+        "engine_power": "",
+        "gear_System": "",
+        "front_Tire": "",
+        "rear_Tire": "",
+        "fuel_Capacity": "",
+        "Body_Weight": ""
+    },
+    "video": {
+        "link": "",
+        "title": ""
+    },
+    "intodruction_3": ""
+}
+
+
 ข้อมูลเนื้อหา
 ----------------------------------------------------------------------------
-h2r : https://www.bigbikeinfo.com/kawasaki/price-ninja-h2r
-H2SXSE : https://www.kawasaki.co.th/motorcycle/NinjaH2SXSE+
-h2 : https://realmotosports.com/listings/kawasaki-ninja-h2/
-ZX-14R : https://www.kawasaki.co.th/motorcycle/ninjazx14r
-ZX-10R : https://www.ananmoney.com/kawasaki-ninja-zx10r/
-ZX-6R : https://www.peeramotosports.co.th/product/ninja-zx6r/
-ZX-4r : https://www.peeramotosports.co.th/product/ninja-zx-4r/
-ZX-25r : https://www.kawasaki.co.th/motorcycle/ninjazx25r
-ZH2 : https://www.bigbikeinfo.com/kawasaki/price-zh2
+
+h2r 
+------------------------------------------------------------------
+https://www.bigbikeinfo.com/kawasaki/price-ninja-h2r
+https://www.songlor.com/wp-content/uploads/2015/12/g2kwhvz2.33q_.jpg
+
+
+H2SXSE 
+------------------------------------------------------------------
+https://www.kawasaki.co.th/motorcycle/NinjaH2SXSE+
+https://bikes.motobank.co.uk/storage/kawasaki/z-h2-1233/i/photo-1233-9713.jpg
+
+h2 
+------------------------------------------------------------------
+https://realmotosports.com/listings/kawasaki-ninja-h2/
+https://www.9carthai.com/wp-content/uploads/2020/09/KAWASAKI-NINJA-H21.jpg
+
+
+ZX-14R 
+------------------------------------------------------------------
+https://www.kawasaki.co.th/motorcycle/ninjazx14r
+https://www.motorbeam.com/wp-content/uploads/2016-Kawasaki-ZX-14R-Review.jpg
+
+
+ZX-10R 
+------------------------------------------------------------------
+https://www.ananmoney.com/kawasaki-ninja-zx10r/
+https://images.unsplash.com/photo-1565716694049-ae576409b9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
+
+
+ZX-6R  
+------------------------------------------------------------------
+https://www.peeramotosports.co.th/product/ninja-zx6r/
+
+
+ZX-4r  
+------------------------------------------------------------------
+https://www.peeramotosports.co.th/product/ninja-zx-4r/
+
+
+ZX-25r 
+------------------------------------------------------------------
+https://www.kawasaki.co.th/motorcycle/ninjazx25r
+
+
+ZH2  
+------------------------------------------------------------------
+https://www.bigbikeinfo.com/kawasaki/price-zh2
+
+
+
+
+
+
+
+
+
 
 
 ข้อมูลโฆษณา
