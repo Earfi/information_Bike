@@ -10,12 +10,12 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/listbike/:brandBike',
+      path: '/listbike/:brand_Bike',
       name: 'ListBikeView',
       component: () => import('../views/ListBikeView.vue')
     },
     {
-      path: '/bikedetail/:brandBike/:pathName',
+      path: '/bikedetail/:brand_Bike/:path_Name',
       name: 'BikeDetail',
       component: () => import('../views/BikeDetail.vue')
     },

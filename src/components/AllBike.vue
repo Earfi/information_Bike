@@ -47,12 +47,12 @@ onMounted(async () => {
                         <div
                             class="h-48 width flex bg-black border rounded-3xl overflow-hidden shadow-md hover:shadow hover:cursor-pointer ">
                             <img class="w-3/6 mt-7 rounded-2xl border shadow-lg shadow-gray-600 h-32 object-cover ml-5"
-                                :src="bike.imagesPreview" alt="pic bike">
+                                :src="bike.images_Preview" alt="pic bike">
                             <div class="text-white ml-4 mt-5">
                                 <span class="click text-red-600 relative"> Click to read more</span>
                                 <h1 class="text-xl font-semibold -mt-4">{{ bike.model }}</h1>
                                 <hr class="text-gray-500 ">
-                                <p class="text-xs text-gray-200 mt-2 w-44 ">{{ bike.infoPreview }}
+                                <p class="text-xs text-gray-200 mt-2 w-44 ">{{ bike.info_Preview }}
                                 </p>
                             </div>
                         </div>

@@ -6,6 +6,5 @@ import SlideShow from '../components/SlideShow.vue'
 <template>
   <main>
     <SlideShow />
-    <h1>Home View</h1>
   </main>
 </template>
