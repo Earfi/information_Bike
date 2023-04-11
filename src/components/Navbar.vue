@@ -90,7 +90,7 @@ const clearLitle = () => {
             <div class="absolute flex px-13 text-3xl font-mono mt-8 w-full">
 
                 <!-- KAWASAKI -->
-                <div class="kawasaki absolute" @click="changeTextColor('kawasaki') && dropdownOpen()">
+                <div class="kawasaki absolute fixed" @click="changeTextColor('kawasaki') && dropdownOpen()">
                     <h1 :style="changeColor === 'kawasaki' ? { color: 'red' } : { color: 'white' }"
                         class="hover:cursor-pointer hover:text-red-700 fixed">
                         KAWASAKI</h1>
