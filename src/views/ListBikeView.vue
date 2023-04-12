@@ -2,6 +2,7 @@
 import { ref, onMounted, defineProps, watchEffect, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import AllBike from '../components/AllBike.vue'
+import BikeIntroduce from '../components/BikeIntroduce.vue'
 
 const props = defineProps({
   bike: {
@@ -32,6 +33,7 @@ watch(() => props.bike, () => {
   <div>
     <hr class="mt-5" />
     <AllBike :bike="itemAllInput" />
+    <BikeIntroduce />
   </div>
 </template>
 

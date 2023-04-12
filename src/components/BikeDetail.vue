@@ -1,5 +1,7 @@
 <script setup>
-import { ref, watch, computed } from "vue";
+import { ref, watch } from "vue";
+
+
 const props = defineProps({
     bikeInput: {
         required: true
@@ -9,7 +11,7 @@ const props = defineProps({
 const bikeInfo = ref({})
 watch(() => props.bikeInput, () => {
     bikeInfo.value = props.bikeInput;
-    console.log(bikeInfo.value);
+    // console.log(bikeInfo.value);
 })
 
 </script>
@@ -70,6 +72,7 @@ watch(() => props.bikeInput, () => {
             <h1 class="flex justify-center text-2xl font-bold">รถอื่นๆเพิ่มเติม</h1>
             <hr class="mt-10">
         </div>
+
     </div>
 </template>
  

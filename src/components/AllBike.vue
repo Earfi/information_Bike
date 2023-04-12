@@ -2,14 +2,14 @@
 import { ref, watch, onMounted } from 'vue';
 import { RouterLink } from "vue-router";
 
-// const props = defineProps({
-//     listBikeAll: {
-//         type: String,
-//         required: true
-//     }
-// })
+const props = defineProps({
+    listBikeAll: {
+        type: String,
+        required: true
+    }
+})
 
-// const inputAllBIke = ref("")
+const inputAllBIke = ref("")
 const inputBIke = ref([])
 // onMounted(() => props.listBikeAll, () => {
 //     inputAllBIke.value = props.listBikeAll;
@@ -25,7 +25,7 @@ onMounted(async () => {
             const response = await result.json()
             inputBIke.value = response
             // console.log(response);
-            // inputAllBIke.value = props.listBikeAll;
+            inputAllBIke.value = props.listBikeAll;
             // console.log(inputAllBIke.value);
             console.log(inputBIke.value);
         }
@@ -41,7 +41,7 @@ onMounted(async () => {
     <div class="w-full ">
         <h1 class="text-4xl font-bold pl-36 mt-5 mb-7 w-full">Bike</h1>
         <div class="grid-container">
-            <span v-for="bike of inputBIke" :key="bike.brandId">
+            <span v-for="bike of inputBIke" :key="bike.brandId" v-show="bike.bike.brand === inputAllBIke">
                 <div class="ml-1">
                     <RouterLink class="" :to="{ name: 'BikeDetail', params: { id: bike.id } }">
                         <div

@@ -1,30 +1,31 @@
 <script setup>
 import Navbar from './components/Navbar.vue'
-import { ref, onMounted, defineEmits, defineExpose } from 'vue'
+import { ref } from 'vue'
 import { RouterView, RouterLink } from "vue-router";
-import AllBike from './components/AllBike.vue'
 import FooterContent from './components/FooterContent.vue';
+import BikeIntroduce from './components/BikeIntroduce.vue';
 
 const sendAllBike = ref([]);
 const getAllBike = (i) => {
   sendAllBike.value = i;
-  console.log(sendAllBike.value);
+  // console.log(sendAllBike.value);
 };
 
 const sendBike = ref();
 const getBike = (i) => {
   sendBike.value = i;
-  // console.log(sendBike.value);
+  console.log(sendBike.value);
 };
+// console.log(sendBike.value);
 
 </script>
  
 <template>
   <div class="">
     <div class="mb-28 ">
-      <Navbar @sendAllBrandBike="getAllBike" @sendBike="getBike" />
+      <Navbar @sendAllBrandBike="getAllBike" @sendBike="getBike" @sendBikeIntroduce="getBike" />
     </div>
-    <RouterView :listBike="sendAllBike" :bikeInput="sendBike" />
+    <RouterView :bike="sendAllBike" :bikeInputDetail="sendBike" />
     <FooterContent />
   </div>
 </template>

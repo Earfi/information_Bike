@@ -16,14 +16,14 @@ const router = createRouter({
     },
     {
       path: '/bikedetail/:brand_Bike/:path_Name',
-      name: 'BikeDetail',
-      component: () => import('../views/BikeDetail.vue')
+      name: 'ListBikeDetail',
+      component: () => import('../views/ListBikeDetail.vue')
     },
-    {
-      path: '/allbike',
-      name: 'Allbike',
-      component: () => import('../components/AllBike.vue')
-    }
+    // {
+    //   path: '/allbike',
+    //   name: 'Allbike',
+    //   component: () => import('../components/AllBike.vue')
+    // }
   ]
 })
 
