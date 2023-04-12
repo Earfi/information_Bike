@@ -127,7 +127,7 @@ const clearLitle = () => {
                             <div class="new ml-32 w-96">
                                 <h1 class=" mb-2 font-bold text-4xl">Preview</h1>
                                 <hr />
-                                <div class="grid justify-center " v-for="brand of queryBike" :key="brand.brandId">
+                                <div class="grid justify-center" v-for="brand of queryBike" :key="brand.brandId">
                                     <div v-for="bike of brand.bike" :key="bike.id" class="mt-5"
                                         v-show="bike.brand === 'kawasaki'">
                                         <RouterLink

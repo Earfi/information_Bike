@@ -25,8 +25,8 @@ watch(() => props.bikeInput, () => {
             <h1 class="width-intodruction ml-20 mt-24"><b>{{ bikeInfo.model }}</b> {{ bikeInfo.intodruction }}
             </h1>
         </div>
-
-        <div class="flex mt-16 ml-16">
+        <hr class="mt-10">
+        <div class="flex mt-10 ml-16">
             <div class="width-intodruction">
                 <h1 class=" ml-64 text-xl font-extrabold">ข้อมูลทางเทคนิค {{ bikeInfo.model }} </h1>
                 <div>
@@ -48,8 +48,8 @@ watch(() => props.bikeInput, () => {
             <img class="w-4/12 mt-10 ml-20 rounded-2xl border shadow-lg shadow-gray-600 object-cover"
                 :src="bikeInfo.main_Images" alt="image preview">
         </div>
-
-        <div class="flex mt-16 mb-16 ml-16">
+        <hr class="mt-10">
+        <div class="flex mt-10 mb-16 ml-16">
             <div class="pl-16">
                 <iframe class="mt-0 border-red-600 border-2 rounded-xl" width="550" height="310" :src="bikeInfo.video?.link"
                     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -65,9 +65,10 @@ watch(() => props.bikeInput, () => {
                 </h1>
             </div>
         </div>
-        <div class="">
+        <hr class="mt-10">
+        <div class="mt-10">
             <h1 class="flex justify-center text-2xl font-bold">รถอื่นๆเพิ่มเติม</h1>
-            <hr>
+            <hr class="mt-10">
         </div>
     </div>
 </template>
