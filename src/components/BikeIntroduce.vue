@@ -23,7 +23,7 @@ onMounted(async () => {
 const randomId = ref("")
 
 function getRandomNumber() {
-    return randomId.value = Math.floor(Math.random() * (5 - 1) + 1)
+    return randomId.value = Math.floor(Math.random() * (17 - 1) + 1)
 }
 
 </script>
@@ -32,7 +32,7 @@ function getRandomNumber() {
     <div class="w-full h-72 ">
         <div class="flex flex-wrap">
             <div v-for="brand in queryBike" :key="brand.brandId" class="w-1/5 p-2">
-                <div class="flex w-60 object-cover mt-2 ml-9" v-for="bike of brand.bike" :key="bike.id">
+                <div class="flex w-60 object-cover mt-1 ml-9" v-for="bike of brand.bike" :key="bike.id">
 
                     <RouterLink v-if="bike.brand === 'kawasaki'" v-show="bike.id === randomId"
                         :to="{ name: 'ListBikeDetail', params: { brand_Bike: brand.brand_Bike, path_Name: bike.path_Name } }"
