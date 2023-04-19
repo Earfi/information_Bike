@@ -15,13 +15,71 @@ onMounted(async () => {
     }
 })
 
+const changeIndex = (input) => {
+    if (input === -1) {
 
-
+    }
+    return 0
+}
 </script>
  
-<template></template>
+<template>
+    <div class="main flex">
+
+        <div class="sizeSleep rounded-3xl relative ml-44 border overflow-hidden">
+            <div v-for="img of slideValue" :key="img.id" v-show="img.style === 'sleep'">
+                <div v-show="img.id === 5">
+                    <img class="imgSleep h-full m-auto" :src="img.images" alt="">
+                </div>
+            </div>
+            <h1 class="prev absolute text-4xl top-2/4 w-auto pl-5 cursor-pointer "><a :on-click="changeIndex(-1)">❮</a></h1>
+            <h1 class="next absolute text-4xl top-2/4 w-auto right-0 pr-5 cursor-pointer "><a
+                    :on-click="changeIndex(-1)">❯</a>
+            </h1>
+        </div>
+        <div class="sizeStand rounded-3xl relative border overflow-hidden ml-10">
+            <div v-for="img of slideValue" :key="img.id" v-show="img.style === 'stand'">
+                <div v-show="img.id === 8">
+                    <img class="imgStand object-cover h-full w-full  m-auto" :src="img.images" alt="">
+                </div>
+            </div>
+            <h1 class="prev absolute text-4xl top-2/4 w-auto pl-3 cursor-pointer "><a :on-click="changeIndex(-1)">❮</a></h1>
+            <h1 class="next absolute text-4xl top-2/4 w-auto right-0 pr-3 cursor-pointer "><a
+                    :on-click="changeIndex(-1)">❯</a>
+            </h1>
+        </div>
+    </div>
+</template>
  
-<style scoped></style>
+<style scoped>
+.main {
+    margin: auto;
+}
+
+.sizeSleep {
+    width: 800px;
+    height: 350px;
+}
+
+.sizeStand {
+    width: 350px;
+    height: 350px;
+}
+
+.imgSleep {
+    width: 600px;
+}
+
+.imgStand {
+    width: 250px;
+}
+
+.prev:hover,
+.next:hover {
+    color: red;
+    text-shadow: 1px 1px 1px black
+}
+</style>
 
 <!-- <div v-for="i of slideValue" :key="i.id" class="flex justify-center items-center mt-2 flex-col "> -->
     <!-- <h1>{{ i.brand }}</h1> -->

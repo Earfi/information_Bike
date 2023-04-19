@@ -6,7 +6,7 @@ import BikeIntroduce from '../components/BikeIntroduce.vue'
 
 const props = defineProps({
   bike: {
-    type: Array,
+    type: String,
     requied: true
   },
 });
@@ -14,7 +14,7 @@ const props = defineProps({
 
 
 // console.log(props.bike);
-const itemAllInput = ref([])
+const itemAllInput = ref('')
 // inputProps.value = props.bike
 // console.log(inputProps.value);
 
@@ -23,7 +23,7 @@ onMounted(() => {
   console.log(itemAllInput.value);
 })
 watch(() => props.bike, () => {
-  itemAllInput.value = props.bike.value;
+  itemAllInput.value = props.bike;
   console.log(itemAllInput.value);
 })
 
@@ -32,7 +32,7 @@ watch(() => props.bike, () => {
 <template>
   <div>
     <hr class="mt-5" />
-    <AllBike :bike="itemAllInput" />
+    <AllBike :listBikeAll="itemAllInput" />
     <BikeIntroduce />
   </div>
 </template>
